@@ -50,8 +50,11 @@ function preload(){
 
 function setup() {
   createCanvas(1350,600);
+  obs = createSprite(600,300);
+  obs.scale=2.5;
+  obs.addImage(groundImage);
   
-
+ 
   edges = createEdgeSprites();
  
  player = createSprite(90,520,50,50);
@@ -101,7 +104,7 @@ function setup() {
  obs9 = createSprite(245,270,100,30);
  obs9.shapeColor = "red";
 
- obs10 = createSprite(120,270,150,30);
+ obs10 = createSprite(120,270,160,30);
  obs10.shapeColor = "red";
 
  obs11 = createSprite(340,400,30,100);
@@ -113,17 +116,28 @@ function setup() {
  obs13 = createSprite(340,190,150,30);
  obs13.shapeColor = "red";
 
- obs14 = createSprite(400,360,150,30);
+ obs14 = createSprite(430,360,210,30);
  obs14.shapeColor = "red";
 
  obs15 = createSprite(450,470,30,190);
  obs15.shapeColor = "red";
 
- obs16 = createSprite(100,270,150,30);
+ obs16 = createSprite(280,100,30,150);
  obs16.shapeColor = "red";
 
- obs17 = createSprite(400,100,30,150);
+ obs17 = createSprite(520,300,30,100);
  obs17.shapeColor = "red";
+
+ 
+ obs18 = createSprite(556,240,100,30);
+ obs18.shapeColor = "red";
+
+ obs19 = createSprite(1020,270,150,30);
+ obs19.shapeColor = "red";
+
+ obs20 = createSprite(490,50,150,30);
+ obs20.shapeColor = "red";
+ obs20.velocityY = 3;
 }
 
 function draw() {
@@ -142,6 +156,14 @@ function draw() {
         obs7.bounceOff(obs9)
           )
 
+          if(obs20.isTouching(obs18))(
+            obs20.bounceOff(obs18)
+              )
+        
+              if(obs20.isTouching(side4))(
+                obs20.bounceOff(side4)
+                  )
+
 
   if(keyDown("down")) {
     player.y +=3};
@@ -158,23 +180,23 @@ function draw() {
           if(player.isTouching(side1)) {
             player.collide(side1)
             textSize(20);
-            text("You can't go inside the wall",200,200);
+            text("You can't go inside the wall",500,200);
           };
           if(player.isTouching(side2)) {
             player.collide(side2)
             textSize(20);
-            text("You can't go inside the wall",200,200)
+            text("You can't go inside the wall",500,200)
           };
           
           if(player.isTouching(side3)) {
             player.collide(side3)
            textSize(20);
-            text("You can't go inside the wall",200,200)
+            text("You can't go inside the wall",500,200)
           };
             if(player.isTouching(side4)) {
               player.collide(side4)
              textSize(20);
-            text("You can't go inside the wall",200,200)
+            text("You can't go inside the wall",500,200)
             };
             if(player.isTouching(obs1)) {
               player.collide(obs1)
@@ -246,14 +268,123 @@ function draw() {
              player.y=520
             };
 
+            if(player.isTouching(obs9)) {
+              player.collide(obs9)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs10)) {
+              player.collide(obs10)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs11)) {
+              player.collide(obs11)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs12)) {
+              player.collide(obs12)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs13)) {
+              player.collide(obs13)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs14)) {
+              player.collide(obs14)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs15)) {
+              player.collide(obs15)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs16)) {
+              player.collide(obs16)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs17)) {
+              player.collide(obs17)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs18)) {
+              player.collide(obs18)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs19)) {
+              player.collide(obs19)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
+
+            if(player.isTouching(obs20)) {
+              player.collide(obs20)
+              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+            console.log(b);
+            player.x=120
+             player.y=520
+            };
 
             if(player.isTouching(target)) {
             let b = confirm("😎😎😀😀😁😁You won , Do you want to save your progress");
             console.log(b);
             player.x=120
              player.y=520
+                
+             obs7.velocityY += 3;
+             obs20.velocityY += 5;
+             if(keyDown("down")) {
+              player.y +=5};
+          
+              if(keyDown("up")) {
+                player.y -=5};
+              
+                if(keyDown("left")) {
+                  player.x -=5};
+          
+                  if(keyDown("right")) {
+                    player.x +=5};
             };
-
+              
 
             
  drawSprites();
