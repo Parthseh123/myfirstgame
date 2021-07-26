@@ -129,15 +129,16 @@ function setup() {
  obs17.shapeColor = "red";
 
  
- obs18 = createSprite(556,240,100,30);
+ obs18 = createSprite(570,240,130,30);
  obs18.shapeColor = "red";
 
- obs19 = createSprite(1020,270,150,30);
+ obs19 = createSprite(490,50,150,30);
  obs19.shapeColor = "red";
+ obs19.velocityY = 3;
 
- obs20 = createSprite(490,50,150,30);
- obs20.shapeColor = "red";
- obs20.velocityY = 3;
+
+
+
 }
 
 function draw() {
@@ -156,13 +157,15 @@ function draw() {
         obs7.bounceOff(obs9)
           )
 
-          if(obs20.isTouching(obs18))(
-            obs20.bounceOff(obs18)
+          if(obs19.isTouching(obs18))(
+            obs19.bounceOff(obs18)
               )
         
-              if(obs20.isTouching(side4))(
-                obs20.bounceOff(side4)
+              if(obs19.isTouching(side4))(
+                obs19.bounceOff(side4)
                   )
+
+                  
 
 
   if(keyDown("down")) {
@@ -356,35 +359,40 @@ function draw() {
              player.y=520
             };
 
-            if(player.isTouching(obs20)) {
-              player.collide(obs20)
-              let b = confirm("😢😭😭You Lost , Do you want to save your progress");
-            console.log(b);
-            player.x=120
-             player.y=520
-            };
+           
 
             if(player.isTouching(target)) {
             let b = confirm("😎😎😀😀😁😁You won , Do you want to save your progress");
             console.log(b);
-            player.x=120
-             player.y=520
+            player.x=120;
+             player.y=520;
+             
+             obs20 = createSprite(1000,150,30,160);
+             obs20.shapeColor = "red";
+             obs20.velocityX -= 3;
+            
+             obs21 = createSprite(630,140,150,30);
+             obs21.shapeColor = "red";
+            
+             obs22 = createSprite(1100,490,30,150);
+             obs22.shapeColor = "red";
+            
+             obs23 = createSprite(1010,430,150,30);
+             obs23.shapeColor = "red";
+            
+             obs24 = createSprite(950,350,30,150);
+             obs24.shapeColor = "red";
+            
+
+             if(obs20.isTouching(obs21)){
+              obs20.bounceOff(obs21)
+             };
+          
+                if(obs20.isTouching(side3)){
+                  obs20.bounceOff(side3);
                 
-             obs7.velocityY += 3;
-             obs20.velocityY += 5;
-             if(keyDown("down")) {
-              player.y +=5};
-          
-              if(keyDown("up")) {
-                player.y -=5};
-              
-                if(keyDown("left")) {
-                  player.x -=5};
-          
-                  if(keyDown("right")) {
-                    player.x +=5};
-            };
-              
+                };
+          }          
 
             
  drawSprites();
