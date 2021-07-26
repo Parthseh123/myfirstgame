@@ -37,6 +37,7 @@ var obs30;
 var obs31;
 var obs32;
 var target;
+var target2;
 // let a = prompt("what is your name","Guest")
 //  console.log(a)
 
@@ -382,6 +383,9 @@ function draw() {
             
              obs24 = createSprite(950,350,30,150);
              obs24.shapeColor = "red";
+
+             target2 = createSprite(1200,100,50,50);
+             target2.shapeColor = "blue";
             
 
              if(obs20.isTouching(obs21)){
@@ -392,6 +396,53 @@ function draw() {
                   obs20.bounceOff(side3);
                 
                 };
+
+                if(player.isTouching(obs20)) {
+                  player.collide(obs20)
+                  let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+                console.log(b);
+                player.x=120
+                 player.y=520
+                };
+
+                if(player.isTouching(obs21)) {
+                  player.collide(obs21)
+                  let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+                console.log(b);
+                player.x=120
+                 player.y=520
+                };
+
+                if(player.isTouching(obs22)) {
+                  player.collide(obs22)
+                  let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+                console.log(b);
+                player.x=120
+                 player.y=520
+                };
+
+                if(player.isTouching(obs23)) {
+                  player.collide(obs23)
+                  let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+                console.log(b);
+                player.x=120
+                 player.y=520
+                };
+
+                if(player.isTouching(obs24)) {
+                  player.collide(obs24)
+                  let b = confirm("😢😭😭You Lost , Do you want to save your progress");
+                console.log(b);
+                player.x=120
+                 player.y=520
+                };
+
+                if(player.isTouching(target2)) {
+                  let b = confirm("😎😎😀😀😁😁You won , Do you want to save your progress");
+                  console.log(b);
+                  player.x=120;
+                   player.y=520;
+                  }
           }          
 
             
